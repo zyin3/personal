@@ -1,0 +1,157 @@
+\newcommand{\bcolumn}{  \begin{tabular*}{\textwidth}{ @{}l @{\extracolsep{\fill}}r}}
+\newcommand{\ecolumn}{\end{tabular*}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\documentclass[margin,10pt]{res} % default is 10 pt
+%\footheight 0in
+\usepackage{latexsym}
+\usepackage{hyperref}
+\usepackage{multirow}
+%\topmargin=in
+\textheight=11in
+\topmargin=-0.6in
+% margin option puts section titles to left of text
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+
+\begin{document}
+\name{{\huge Zhiyuan Yin}\\[12pt]} % the \\[12pt] adds a blank line after name
+
+\address{zyyin2005@gmail.com}
+
+\address{(+1)979-422-3532}
+
+
+
+\begin{resume}
+  \newsectionwidth{1.3in} 
+  \resumewidth=7.1in
+
+  \section{\Large Professional Experience}{ {
+      \begin{tabular*}{\textwidth}{@{}l @{\extracolsep{\fill}}r}
+        {\bf \Large SDE} & 07.2012-present \\
+        {\bf \large Amazon Web Service}, Seattle, WA\\
+  \end{tabular*}}}
+      \begin{itemize}
+      \item Worked on AWS Relational Database Service
+        \url{http://aws.amazon.com/rds/}.
+      \item Develop and test features of the RDS system with three database engine brands (MySQL, Oracle, SQL Server) on two operating system platforms (Linux, Windows).
+      Being the key contributor for the second wave of RDS features in Virtual Private Cloud (VPC), I designed, implemented and tested the Security Group feature for RDS in VPC.
+      \item Built and maintained the distributed log analysis service that generates metrics to help evaluate the quality of service provided by RDS. It not only retrieves health data for all the RDS instances within each data center but also aggregates them to provide availability measurement for every single instance.
+      \item Integrated Amazon Route53 (Cloud DNS provider) with RDS, which reduced ``Multi-AZ'' (RDS high availability feature) fail over time by more than 70\%. This work involves building a highly available and scalable health report service that leverages Route53's health check to achieve automatic DNS failover.
+      \item Built extensive hands on knowledge with AWS technologies, including Elastic Compute Cloud, Simple Work Flow, Simple Storage Service and Route 53
+      \item Diagnose and fix problems in the system in real time, to ensure a seamless customer experience (``on-call''). 
+      \end{itemize}
+
+      \begin{tabular*}{\textwidth}{@{}l @{\extracolsep{\fill}}r}
+        {\bf \Large SDET} & 01.2011-06.2012 \\
+        \end{tabular*}
+      {\bf \large Microsoft}, Redmond, WA\\
+      Windows Azure Management and Runtime Team
+      \begin{itemize}
+      \item Worked on Windows Azure SDK Quality Assurance. Key responsibilities include building
+      and maintaining Azure SDK’s test automation framework for both Desktop Tools and
+      Cloud Runtime Library, providing partner team with tooling to facilitate End To End
+      testing, and performing test sign off on software releases.
+      \item Designed and built a regression test framework which condensed all Azure SDK features
+      into 8 highly extensible and compact packages. Reduced the number of test packages by a
+      factor of 10 without losing coverage.
+      \end{itemize}
+      
+      \begin{tabular*}{\textwidth}{@{}l @{\extracolsep{\fill}}r}
+        {\bf \Large SDE Intern} & 05.2010-08.2010 \\
+        \end{tabular*}
+      {\bf \large Microsoft}, Redmond, WA\\
+      Windows Azure Developer Experience Team
+      \begin{itemize}
+      \item Developed the emulation tool to enable testing host-guest communication on a desktop
+      Computer, using IIS Hostable Webcore and C++ to build a mock server and
+      a C\# Wrapper to facilitate integration into existing test framework.
+      \item Designed, implemented and tested the Key Management Service (KMS) proxy running in
+      each Windows Azure Data Center worldwide. Using Windows Azure SDK to implement
+      the Proxy Server as a service, which can be conﬁgured using DNS SRV record to point
+      to diﬀerent KMS Server. The proxy also throttles activation requests from each IP address
+      to prevent abusive usage of Azures KMS Activation Service. Wrote a full-ﬂedged C\# DNS
+      Packet library from scratch.
+      \end{itemize}
+
+      \section{\Large Technical\\Skills} 
+      Java, Ruby/Rails, C\#, C/C++, SQL, Spring, JDBC, WCF, ASP.NET, IIS, MySQL, Oracle, git, svn, Eclipse, Amazon EC2,
+      Amazon SWF, Amazon S3, Amazon Route 53
+
+  \section{\Large Education}       
+  \begin{tabular*}{\textwidth}{ @{}l @{\extracolsep{\fill}}r}
+    {\bf \Large M.S.,  Electrical  Engineering} 
+    & Graduation Date: 12.2010\\
+  \end{tabular*}
+      {\bf \large Texas A\&M University}, College Station, TX\\
+      GPA: 4.0/4.0
+%%       \begin{tabular*}{\textwidth}{ @{}l @{\extracolsep{\fill}}r}
+%%         {\bf \Large B.S.,  Electrical Engineering} & Graduation Date: 07.2008\\
+%%       \end{tabular*}
+%%           {\bf \large  Shanghai Jiao Tong University}, China\\
+%%           GPA: 84/100, 
+%%           Graduated With Honors 
+
+
+%%           \section{\Large Academic\\Publication}
+%%           \bi
+%%         \item Z.Y. Yin, H. Alnuweiri and A.L.N. Reddy, ``Performance of early retransmission scheme in streaming media,'' {\it IEEE International Conference of Telecommunications,} Doha, Qatar, April 2010.
+%%         \item Z.Y. Yin, H. Alnuweiri, A. L. N. Reddy, H. Celebi and K. Qaraqe, ``Improving the Performance of Delay Based protocol in delivering real time media via early retransmission, ''  {\it IEEE International Conference of Telecommunications,}, Ayia Napa, June 2011.                  
+%%           \ei
+%%                   \section{\Large Academic\\Projects}  
+%%                           {\bf \large Multimedia Streaming Emulator}
+%%                           \bi
+%%                         \item Written in C++, it runs benchmark evaluation on
+%%                           transport protocols' performance in video streaming.  
+%%                         \item Equipped with two control channels for each session,
+%%                           enabling bandwidth estimation and dynamic adjusting encoding rate.
+%%                         \item Provided standard APIs to allow easy integration into {\em ns2 } and high extensibility to facilitate future research projects.
+%%                           \ei
+
+%%                           {\bf \large 2009 RTSS CyberRescue Competition (Team Leader)}
+%%                           \bi
+%%                         \item Designed and implemented real-time navigation and communication algorithms that enable 5 robots to locate and reach the target through a maze.
+%%                         \item Utilized QT3 in GUI design to allow visual debugging as well as graphical output, and STL to facilitate algorithm implementations.
+%%                         \item Coordinated the joint effort of 3 team members. %Ranked 3rd out of 8 teams in the local competition.
+%%                           \ei
+
+
+
+%%                           {\bf \large Operating System On MIPS Architecture}
+%%                           \begin{itemize}
+%%                           \item Built portions of the fundamental 
+%%                             structure of an operating system with C++ and 
+%%                             MIPS assembly language.
+%%                           \item Implemented the kernel memory manager with 
+%%                             Fibonacci Buddy Algorithm, and the CPU scheduler 
+%%                             with a Multilevel Feedback Scheme.
+%%                           \item Used {\em gxemul} to emulate MIPS architecture.
+%%                           \end{itemize}
+
+
+
+                          
+
+                          
+
+                          %%                        {\bf \large Digital Integrated Circuit Design}
+                          %%                         \begin{itemize}
+                          %%                           \item Designed an 8-bit pipe-lined full adder with
+                          %%                             Cadence design integration tool.
+                          %%                           \item Performed post-layout optimization on 
+                          %%                             the circuit.
+                          %%                           \item Used H-clock tree method to eliminate clock
+                          %%                             skew.
+                          %%                         \end{itemize}
+
+                          %\newpage
+
+\end{resume} 
+\end{document}
+
+
+
+
+
