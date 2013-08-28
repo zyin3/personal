@@ -1,0 +1,38 @@
+#!/usr/bin/python
+
+import sys
+
+test_cases = open(sys.argv[1], 'r')
+
+def next_integer(n):
+    max = '/0'
+    l = len(n)-1
+    for i in range(len(n)):
+        if ( n[ l - i ] < max ):
+            j = l
+            while n[j] < n[l - i]:
+                j -= 1
+            n[l-i], n[j] = n[j], n[l-i]
+            n[l-i+1:] = reversed( n[l-i+1:] )
+            return ''.join(n)
+        else:
+            max = n[l-i]
+
+    j = l
+
+    while j >= 0 and n[j] == '0':
+        j -= 1
+        
+    if j != -1:
+        m = n[:j+1]
+        n[:j+1] = reversed(n[:j+1])
+        n.insert(1, '0')
+    return ''.join(n)
+
+for test in test_cases:
+    # ignore test if it is an empty line
+    # 'test' represents the test case, do something with it
+    # ...
+    # ...
+    print next_integer(list(test.rstrip()))
+test_cases.close()

@@ -1,0 +1,30 @@
+#!/usr/bin/python
+import sys
+test_cases = open(sys.argv[1], 'r')
+
+def find_distinct_seq(s, p):
+    m = len(s)
+    n = len(p)
+    dp = [ [ 0 for x in range(n+1) ] for y in range(m+1) ] 
+    for i in range(m+1):
+        for j in range(n+1):
+            if j == 0:
+                dp[i][j] = 1
+            elif i == 0:
+                dp[i][j] = 0
+            else:
+                dp[i][j] = dp[i-1][j]
+                if s[i-1] == p[j-1]:
+                    dp[i][j] += dp[i-1][j-1]
+    return dp[m][n]
+                
+for test in test_cases:
+    # ignore test if it is an empty line
+    # 'test' represents the test case, do something with it
+    # ...
+    # ...
+    a = test.rstrip().split(",")
+    print find_distinct_seq(a[0], a[1])
+test_cases.close()
+
+

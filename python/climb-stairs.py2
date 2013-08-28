@@ -1,0 +1,22 @@
+#!/usr/bin/python
+import sys
+test_cases = open(sys.argv[1], 'r')
+c_map = {}
+def get_steps(n, c_map):
+    if n == 1 or n == 0:
+        return 1
+    elif n in c_map:
+        return c_map[n]
+    else:
+        c_map[n] = get_steps(n-1, c_map) + get_steps(n-2, c_map)
+        return c_map[n]
+
+for test in test_cases:
+    # ignore test if it is an empty line
+    # 'test' represents the test case, do something with it
+    # ...
+    # ...
+    print get_steps(int(test), c_map)
+test_cases.close()
+
+
