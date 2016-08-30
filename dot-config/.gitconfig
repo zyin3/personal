@@ -1,0 +1,15 @@
+[user]
+        name = Zhiyuan Yin
+        email = zyin@google.com
+[credential]
+        helper = cache --timeout=3600
+[alias]
+        b = branch
+        ci = commit
+        ch = checkout
+        s = status
+[merge]
+        tool = tkdiff
+
+[diff]
+        renameLimit = 99999
