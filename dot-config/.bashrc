@@ -3,10 +3,7 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[ -z "$PS1" ] && return
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -31,7 +28,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
@@ -88,7 +85,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias gcurl='curl -H "$(oauth2l header --json ~/client_secret.json cloud-platform)" -H "Content-Type: application/json"'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -105,12 +102,65 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
-  fi
 fi
 
+
 alias e='emacs -nw'
+
+alias apiary='cd java/com/google/api/server'
+alias bb='blaze build --experimental_deps_ok'
+alias build_copier='/google/data/ro/projects/build_copier/build_copier'
+alias g3='cd /google/src/cloud/zyin/apiarycodelab/google3'
+alias sng='synergys -f --config $HOME/synergy.conf'
+alias docwiz=/google/data/rw/projects/apiserving/tools/docwizard.sh
+alias libb='blaze-bin/java/com/google/api/server/examples/library/LibraryServer'
+alias blr='/google/src/head/depot/google3/devtools/blaze/scripts/blaze-run.sh'
+alias apido=/google/data/ro/teams/oneplatform/apido
+alias placer=/google/data/ro/projects/placer/placer
+alias fileutil=/google/data/ro/projects/placer/fileutil
+alias inception_tool=/google/data/ro/teams/oneplatform/inception_tool
+alias inception=/google/data/ro/teams/oneplatform/inception_push
+alias inception_cli=/google/data/ro/teams/oneplatform/inception_cli
+alias gcurl='curl -H "$(oauth2l header cloud-platform)" -H "Content-Type: application/json"'
+
+export clab='java/com/google/api/server/config/examples/library'
+export P4EDITOR='emacs -nw'
+export P4MERGE='meld'
+export EDITOR='emacs -nw'
+export P4DIFF='meld'
+export GIT_EDITOR='emacs -nw'
+export jcg='java/com/google'
+export jcga='java/com/google/api'
+export jcgas='java/com/google/api/server'
+export jtcg='javatests/com/google'
+export jtcga='javatests/com/google/api'
+export jtcgas='javatests/com/google/api/server'
+export lae="http://localhost:8787"
+export eclipse="../magicjar/eclipse/bin/"
+
+export HEAD='/google/src/head/depot/google3/tools/'
+export expr='experimental/users/zyin'
+export GOPATH='/usr/local/google/home/zyin/gopath:/google/src/cloud/zyin/inception/google3/blaze-bin/'
+export GOROOT='/usr/local/go'
+export PATH=$PATH:~/bin:$GOROOT/bin
+
+function getcl() {
+  /usr/bin/srcfs get_readonly
+}
+
+function spansql_test() {
+  span sql /span/nonprod/apiserving-dev:inception
+}
+
+function spansql_prod() {
+  span sql /span/global/apiserving-spanner:inception
+}
+
+function tokeninfo() {
+  curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$1"
+}
+
+# Setup for Android Boot Camp
+source /usr/local/google/home/zyin/abc_sandbox/.abcrc
