@@ -48,6 +48,8 @@
   ;; If there is more than one, they won't work right.
  )
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (global-set-key "\C-x#" 'comment-region)
 (global-set-key "\C-x%" 'uncomment-region)
 
@@ -113,3 +115,10 @@
 (add-hook 'protobuf-mode-hook
         '(lambda () (font-lock-set-up-width-warning 80)))
 (put 'upcase-region 'disabled nil)
+
+(add-hook 'go-mode-hook
+  (lambda ()
+    (setq-default)
+    (setq tab-width 2)
+    (setq standard-indent 2)
+    (setq indent-tabs-mode nil)))
