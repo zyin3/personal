@@ -22,8 +22,8 @@
 ;; (pymacs-load "ropemacs" "rope-")
 ;; (setq ropemacs-enable-autoimport t)
 
-;; (require 'auto-complete)
-;; (global-auto-complete-mode t)
+(require 'auto-complete)
+(global-auto-complete-mode t)
 
 
 ;disable backup
