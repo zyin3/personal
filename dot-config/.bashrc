@@ -161,6 +161,3 @@ function spansql_prod() {
 function tokeninfo() {
   curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$1"
 }
-
-# Setup for Android Boot Camp
-source /usr/local/google/home/zyin/abc_sandbox/.abcrc
