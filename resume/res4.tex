@@ -8,6 +8,9 @@
 \usepackage{latexsym}
 \usepackage{hyperref}
 \usepackage{multirow}
+\usepackage{xcolor}
+\newcommand{\link}[1]{{\color{blue}\href{#1}}}
+
 %\topmargin=in
 \textheight=11in
 \topmargin=-0.6in
@@ -20,22 +23,40 @@
 
 \address{zyyin2005@gmail.com}
 
-\address{(+1)979-422-3532}
-
+\address{979-422-3532}
 
 \begin{resume}
-  \newsectionwidth{1.3in} 
-  \resumewidth=7.1in
+  
+  \newsectionwidth{1.3in}
+  
+  \resumewidth=10in
+\section{\Large Summary}  Engineering \& Product Leader with 9 years of experience in distributed systems, databases, cloud services at Google, Amazon and Microsoft. I enjoy working in fast paced startup-like environments and building and leading high-performing team.
+
     \section{\Large Professional Experience} { 
       \begin{tabular*}{\textwidth}{@{}l @{\extracolsep{\fill}}r}
-        {\bf \Large SWE} & 09.2013-present \\
-        {\bf \large Google Inc.}, Kirkland, WA\\
+        {\bf \Large Senior Software Engineer} \\
+        %% & 09.2013-present \\
+        {\bf \large Google Inc}\\
+      {\bf Tech Lead on Google Cloud Service Infrastructure} &  2013- 2017 \\
       \end{tabular*}
+
       \begin{itemize}
-        \item  Technical Lead On Google Service Management \\
-          \url{https://cloud.google.com/service-management/overview}. \\
-          It's a one stop shop for building an API on top of all the
-          goodies offered by Google Cloud.
+        \item \href{https://cloud.google.com/service-management}{Google Cloud Service Infrastructure} provides control plane functionalities including auth, quota, logging, billing to all Google Cloud APIs.
+        \item Built the high performance, high availability service from concept to general availability. The project is now a foundational component of Google Cloud Platform.
+       \item Led a team of 10+ engineers across 3 office locations and 2 continents.
+         Drove technical achitecture and planning over multiple product cycles.
+       \item Founding member of Google API Design Committee. I helped design 20+ APIs, including \href{https://cloud.google.com/vision/}{Google Cloud Vision}, \href{https://cloud.google.com/tasks/}{Cloud Task}, \href{https://developers.google.com/vault/}{Google Vault}, etc.
+      \end{itemize}
+      \begin{tabular*}{\textwidth}{@{}l @{\extracolsep{\fill}}r}
+      {\bf Tech Lead on Google Cloud Billing} &  2017- present \\
+      \end{tabular*}
+      
+      \begin{itemize}
+      \item \href{https://cloud.google.com/billing}{Google Cloud Billing} is the monetization platform for Google Cloud. 
+      \item Incubated new business models and offered Billing As A Service to other Google products. Successfully launched monetization for \href{https://cloud.google.com/voice/}
+        {Google Voice For Enterprise} and  \href{https://gsuite.google.com/products/drive/}{G Suite Drive}.
+      \item Designed and built the policy platform that ensures compliance as Google Cloud expand to heavily regulated countries and regions.
+        
       \end{itemize}
 
       \begin{tabular*}{\textwidth}{@{}l @{\extracolsep{\fill}}r}
@@ -48,9 +69,9 @@
       \item Develop and test features of the RDS system with three database engine brands (MySQL, Oracle, SQL Server) on two operating system platforms (Linux, Windows).
       Being the key contributor for the second wave of RDS features in Virtual Private Cloud (VPC), I designed, implemented and tested the Security Group feature for RDS in VPC.
       \item Built and maintained the distributed log analysis service that generates metrics to help evaluate the quality of service provided by RDS. It not only retrieves health data for all the RDS instances within each data center but also aggregates them to provide availability measurement for every single instance.
-      \item Integrated Amazon Route53 (Cloud DNS provider) with RDS, which reduced ``Multi-AZ'' (RDS high availability feature) fail over time by more than 70\%. This work involves building a highly available and scalable health report service that leverages Route53's health check to achieve automatic DNS failover.
-      \item Built extensive hands on knowledge with AWS technologies, including Elastic Compute Cloud, Simple Work Flow, Simple Storage Service and Route 53
-      \item Diagnose and fix problems in the system in real time, to ensure a seamless customer experience (``on-call''). 
+      %% \item Integrated Amazon Route53 (Cloud DNS provider) with RDS, which reduced ``Multi-AZ'' (RDS high availability feature) fail over time by more than 70\%. This work involves building a highly available and scalable health report service that leverages Route53's health check to achieve automatic DNS failover.
+      %% \item Built extensive hands on knowledge with AWS technologies, including Elastic Compute Cloud, Simple Work Flow, Simple Storage Service and Route 53
+      %% \item Diagnose and fix problems in the system in real time, to ensure a seamless customer experience (``on-call''). 
       \end{itemize}
 
       \begin{tabular*}{\textwidth}{@{}l @{\extracolsep{\fill}}r}
@@ -63,28 +84,30 @@
       and maintaining Azure SDK’s test automation framework for both Desktop Tools and
       Cloud Runtime Library, providing partner team with tooling to facilitate End To End
       testing, and performing test sign off on software releases.
-      \item Designed and built a regression test framework which condensed all Azure SDK features
-      into 8 highly extensible and compact packages. Reduced the number of test packages by a
-      factor of 10 without losing coverage.
+      %% \item Designed and built a regression test framework which condensed all Azure SDK features
+      %% into 8 highly extensible and compact packages. Reduced the number of test packages by a
+      %% factor of 10 without losing coverage.
       \end{itemize}
       
-      \begin{tabular*}{\textwidth}{@{}l @{\extracolsep{\fill}}r}
-        {\bf \Large SDE Intern} & 05.2010-08.2010 \\
-        \end{tabular*}
-      {\bf \large Microsoft}, Redmond, WA\\
-      Windows Azure Developer Experience Team
-      \begin{itemize}
-      \item Designed, implemented and tested the Key Management Service (KMS) proxy running in
-      each Windows Azure Data Center worldwide. Using Windows Azure SDK to implement
-      the Proxy Server as a service, which can be conﬁgured using DNS SRV record to point
-      to diﬀerent KMS Server. The proxy also throttles activation requests from each IP address
-      to prevent abusive usage of Azures KMS Activation Service. Wrote a full-ﬂedged C\# DNS
-      Packet library from scratch.
-      \end{itemize} }
-
-      \section{\Large Technical\\Skills} 
-      Java, C\#, C/C++, SQL, Spring, MySQL, Oracle, git,
-      Amazon EC2, Amazon SWF, Amazon S3, Amazon Route 53
+%%       \begin{tabular*}{\textwidth}{@{}l @{\extracolsep{\fill}}r}
+%%         {\bf \Large SDE Intern} & 05.2010-08.2010 \\
+%%         \end{tabular*}
+%%       {\bf \large Microsoft}, Redmond, WA\\
+%%       Windows Azure Developer Experience Team
+%%       \begin{itemize}
+%%       \item Designed, implemented and tested the Key Management Service (KMS) proxy running in
+%%       each Windows Azure Data Center worldwide. Using Windows Azure SDK to implement
+%%       the Proxy Server as a service, which can be conﬁgured using DNS SRV record to point
+%%       to diﬀerent KMS Server. The proxy also throttles activation requests from each IP address
+%%       to prevent abusive usage of Azures KMS Activation Service. Wrote a full-ﬂedged C\# DNS
+%%       Packet library from scratch.
+%%       \end{itemize} }
+}
+    \section{\Large Technical\\Skills}
+    \bi
+    \item Highly proficient in Java and Python.
+    \item Extensive experience in Distributed Systems, Databases, Data Processing Pipelines and RESTful Web APIs.
+     \ei
 
   \section{\Large Education}       
   \begin{tabular*}{\textwidth}{ @{}l @{\extracolsep{\fill}}r}
