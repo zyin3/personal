@@ -1,4 +1,6 @@
 #include <iostream>
+#include <functional>
+#include <bits/unique_ptr.h>
 
 void lambda_expression_capture() {
     auto important = std::make_unique<int>(1);
