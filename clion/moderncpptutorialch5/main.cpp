@@ -9,9 +9,7 @@ struct Foo {
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-
     std::unique_ptr<Foo> p1 = std::make_unique<Foo>();
-
 
     if (p1) p1->foo();
 
