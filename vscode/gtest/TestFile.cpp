@@ -48,7 +48,7 @@ class QueueManagerTest : public Test {
 TEST_F(QueueManagerTest, MockEnqueueWorks) {
   std::unique_ptr<Queue<int>> mqPtr = std::make_unique<MockQueue<int>>();
   MockQueue<int>* rawPtr = dynamic_cast<MockQueue<int>*>(mqPtr.get());
-  EXPECT_CALL(*rawPtr, Enqueue(::testing::_)).Times(2);
+  EXPECT_CALL(*rawPtr, Enqueue(::testing::_)).Times(3);
   QueueManager<int> qm(std::move(mqPtr));
   std::vector<int> v{1,1,1};
   qm.BatchAdd(v);
