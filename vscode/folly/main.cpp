@@ -1,6 +1,6 @@
 #include <folly/Conv.h>
 #include <folly/executors/ThreadedExecutor.h>
-#include <folly/futures/Future.h>
+// #include <folly/futures/Future.h>
 #include <folly/container/F14Set.h>
 #include <iostream>
 #include <string>
@@ -26,10 +26,10 @@ int main(int argc, char **argv) {
   // ...
   folly::ThreadedExecutor executor;
   std::cout << "making Promise" << std::endl;
-  Promise<int> p;
-  Future<int> f = p.getSemiFuture().via(&executor);
-  auto f2 = std::move(f).thenValue(foo);
-  std::cout << "Future chain made" << std::endl;
+  // Promise<int> p;
+  // Future<int> f = p.getSemiFuture().via(&executor);
+  // auto f2 = std::move(f).thenValue(foo);
+  // std::cout << "Future chain made" << std::endl;
   // fbstring str;
   // toAppend(1.1, "foo", &str);
 
@@ -37,6 +37,6 @@ int main(int argc, char **argv) {
 
   auto int_str = to<std::string>(100);
   std::cout << int_str << std::endl;
-  // folly::F14FastSet<int64_t> h = {1,2,3};
+  folly::F14FastSet<int64_t> h = {1,2,3};
   tryTo<int>(int_str).then([](int i) { std::cout << -i << std::endl; });
 }
