@@ -73,7 +73,9 @@
         "typeindex": "cpp",
         "unordered_set": "cpp",
         "variant": "cpp",
-        "bit": "cpp"
+        "bit": "cpp",
+        "clocale": "cpp",
+        "shared_mutex": "cpp"
     },
     "editor.tokenColorCustomizations": {
         "textMateRules": [
